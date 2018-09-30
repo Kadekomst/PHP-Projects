@@ -18,24 +18,14 @@ class Form {
    * @param array
    * @return array
    */
-  public function get_processed_fields_values($request_method, $fields_arr = '') {
+  public function get_processed_fields_values($request_method) {
     $request = $request_method;
     $processed_fields = array();
 
-    if ( $fields_arr === '' )
+    foreach ( $request as $name => $value )
     {
-      foreach ( $request as $name => $value ){ $processed_fields[$name] = htmlspecialchars(trim($value));  }
+      $processed_fields[$name] = htmlspecialchars(trim($value));
     }
-    else if ( is_array($fields_arr) )
-    {
-
-    }
-    else
-    {
-      throw new \Exception("Error Processing Request", 1);
-
-    }
-
 
     return $processed_fields;
   }

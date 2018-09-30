@@ -1,3 +1,4 @@
+<?php require_once 'login.php' ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,8 +13,7 @@
 <div class="container-fluid">
   <div class="wrapper">
     <h1>Success!</h1>
-    <p class="text-center">Your account created successfully!</p>
-    <a href="loca" class="btn btn-primary">Let's Sign In!</a>
+    <p class="text-center">Your were signed in via <?php print $email; ?></p>
   </div>
 </div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
